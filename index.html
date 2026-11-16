@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aldridge & Finch - Home</title>
+    <title>Aldridge &amp; Finch - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-   
     <header>
         <nav class="nav-left">
             <a href="index.html" class="active">Home</a>
             <a href="tea.html">Shop</a>
+            <a href="brewing.html">Brewing</a>
             <a href="#">About</a>
         </nav>
         <div class="logo">
-            <h1>Aldridge & Finch</h1>
+            <h1><a href="index.html">Aldridge &amp; Finch</a></h1>
         </div>
         <div class="nav-right">
-            <a href="#">Search</a>
-            <a href="#">Cart (0)</a>
+            <a href="tea.html#search" class="search-link">Search</a>
+            <a href="#" class="cart-link">Cart (0)</a>
         </div>
     </header>
     <section class="hero">
@@ -39,58 +45,62 @@
         </div>
 
         <div class="product-grid">
-            <div class="product-card">
-                <img class="product-img-placeholder" src="images/2002657_ayr25_royal_blend_loose_tea_250g_tin_mob_sq_b.jpg.webp" alt="Royal Blend loose leaf tea tin">
+            <div class="product-card" data-category="black" data-format="loose">
+                <a href="royal-blend.html"><img class="product-img-placeholder" src="images/2002657_ayr25_royal_blend_loose_tea_250g_tin_mob_sq_b.jpg.webp" alt="Royal Blend loose leaf tea tin"></a>
                 <div class="product-info">
-
-                    <span class="product-name">Product name</span>
-                    <span class="product-price">$18</span>
+                    <a href="royal-blend.html" class="product-name">Royal Blend Loose Leaf Tea</a>
+                    <span class="product-price">$27.00</span>
                 </div>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" data-name="Royal Blend Loose Leaf Tea" data-price="27.00">Add to Cart</button>
             </div>
-            <div class="product-card">
-                <img class="product-img-placeholder" src="images/5086379_green_tea_elderflower_loose_leaf_mob_sq_a_1.jpg.webp" alt="Green tea with elderflower, loose leaf">
+            <div class="product-card" data-category="green" data-format="loose">
+                <a href="elderflower.html"><img class="product-img-placeholder" src="images/5086379_green_tea_elderflower_loose_leaf_mob_sq_a_1.jpg.webp" alt="Green tea with elderflower, loose leaf"></a>
                 <div class="product-info">
-                    <span class="product-name">Product name</span>
-                    <span class="product-price">$16</span>
+                    <a href="elderflower.html" class="product-name">Green Tea with Elderflower</a>
+                    <span class="product-price">$16.00</span>
                 </div>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" data-name="Green Tea with Elderflower" data-price="16.00">Add to Cart</button>
             </div>
-            <div class="product-card">
-                <img class="product-img-placeholder" src="images/SenchaTeaBox.jpg.webp" alt="Sencha tea box">
+            <div class="product-card" data-category="green" data-format="loose">
+                <a href="sencha-tea-box.html"><img class="product-img-placeholder" src="images/SenchaTeaBox.jpg.webp" alt="Sencha tea box"></a>
                 <div class="product-info">
-                    <span class="product-name">Product name</span>
-                    <span class="product-price">$16</span>
+                    <a href="sencha-tea-box.html" class="product-name">Sencha Tea Box</a>
+                    <span class="product-price">$17.00</span>
                 </div>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" data-name="Sencha Tea Box" data-price="17.00">Add to Cart</button>
             </div>
-            <div class="product-card">
-                <img class="product-img-placeholder" src="images/SenchaTeaBag.webp" alt="Sencha tea bags">
+            <div class="product-card" data-category="green" data-format="bags">
+                <a href="sencha-tea-bags.html"><img class="product-img-placeholder" src="images/SenchaTeaBag.webp" alt="Sencha tea bags"></a>
                 <div class="product-info">
-                    <span class="product-name">Product name</span>
-                    <span class="product-price">$17</span>
+                    <a href="sencha-tea-bags.html" class="product-name">Sencha Tea Bags</a>
+                    <span class="product-price">$14.00</span>
                 </div>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" data-name="Sencha Tea Bags" data-price="14.00">Add to Cart</button>
             </div>
         </div>
     </section>
 
-
+    <section class="map-section">
+        <div class="section-header">
+            <h3>Where our tea comes from</h3>
+        </div>
+        <p class="map-intro">click a pin to see the teas from each region.</p>
+        <div id="tea-map"></div>
+    </section>
 
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <h2>Aldridge & Finch</h2>
+                <h2>Aldridge &amp; Finch</h2>
             </div>
             <div class="footer-links">
-
                 <h4>Shop</h4>
                 <ul>
                     <li><a href="tea.html">All Tea</a></li>
-                    <li><a href="#">Black</a></li>
-                    <li><a href="#">Green</a></li>
-                    <li><a href="#">Herbal</a></li>
-                    <li><a href="#">Gift Sets</a></li>
+                    <li><a href="tea.html?cat=black">Black</a></li>
+                    <li><a href="tea.html?cat=green">Green</a></li>
+                    <li><a href="tea.html?cat=herbal">Herbal</a></li>
+                    <li><a href="tea.html">Gift Sets</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -99,14 +109,15 @@
                     <li><a href="#">Shipping</a></li>
                     <li><a href="#">Returns</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Brewing Guide</a></li>
+                    <li><a href="brewing.html">Brewing Guide</a></li>
                 </ul>
             </div>
             <div class="footer-newsletter">
                 <h4>Newsletter</h4>
-                <form>
-                    <input type="email" placeholder="Email address">
+                <form class="newsletter-form" novalidate>
+                    <input type="email" placeholder="Email address" required>
                     <button type="submit">Subscribe</button>
+                    <p class="newsletter-msg"></p>
                 </form>
             </div>
         </div>

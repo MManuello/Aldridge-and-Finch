@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldridge &amp; Finch - Brewing Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="tea.html">Shop</a>
+            <a href="brewing.html" class="active">Brewing</a>
+            <a href="#">About</a>
+        </nav>
+        <div class="logo">
+            <h1><a href="index.html">Aldridge &amp; Finch</a></h1>
+        </div>
+        <div class="nav-right">
+            <a href="tea.html#search" class="search-link">Search</a>
+            <a href="#" class="cart-link">Cart (0)</a>
+        </div>
+    </header>
+    <div class="brew-page">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Brewing Guide</div>
+        <h2>Brewing Guide</h2>
+        <p class="brew-intro">Every tea has its own temperature and timing. Use the calculator for an exact recipe, or check the chart below.</p>
+
+        <div class="brew-layout">
+            <form id="brew-form" class="brew-form" novalidate>
+                <h3>Brew Calculator</h3>
+                <label for="brew-type">Tea type</label>
+                <select id="brew-type" required>
+                    <option value="">Choose a tea</option>
+                        <option value="black">Black</option>
+                        <option value="green">Green</option>
+                        <option value="white">White</option>
+                        <option value="oolong">Oolong</option>
+                        <option value="herbal">Herbal</option>
+                </select>
+
+                <label for="brew-cups">Number of cups (1–12)</label>
+                <input type="number" id="brew-cups" min="1" max="12" value="2" required>
+
+                <fieldset>
+                    <legend>Strength</legend>
+                    <label class="inline"><input type="radio" name="strength" value="0.75"> Light</label>
+                    <label class="inline"><input type="radio" name="strength" value="1" checked> Regular</label>
+                    <label class="inline"><input type="radio" name="strength" value="1.35"> Strong</label>
+                </fieldset>
+
+                <label for="brew-name">Your name (optional)</label>
+                <input type="text" id="brew-name" maxlength="30" placeholder="e.g. Matteo">
+
+                <button type="submit" class="btn">Calculate</button>
+                <p class="form-error"></p>
+            </form>
+
+            <div class="brew-result" id="brew-result">
+                <p class="brew-placeholder">Your brewing recipe will appear here.</p>
+            </div>
+        </div>
+
+        <h3 class="table-title">Brewing Chart</h3>
+        <div class="table-wrap">
+            <table class="brew-table">
+                <thead>
+                    <tr><th>Tea type</th><th>Water temperature</th><th>Leaf per cup</th><th>Steep time</th><th>Try</th></tr>
+                </thead>
+                <tbody>
+                    <tr data-type="black"><td>Black</td><td>100°C / 212°F</td><td>1 tsp (2.5 g)</td><td>3–5 min</td><td><a href="royal-blend.html">Royal Blend</a></td></tr>
+                    <tr data-type="green"><td>Green</td><td>80°C / 176°F</td><td>1 tsp (2.5 g)</td><td>2–3 min</td><td><a href="sencha-tea-box.html">Sencha</a></td></tr>
+                    <tr data-type="white"><td>White</td><td>75–80°C / 170°F</td><td>2 tsp (2.5 g)</td><td>3–5 min</td><td><a href="jasmine-silver-needle.html">Jasmine Silver Needle</a></td></tr>
+                    <tr data-type="oolong"><td>Oolong</td><td>90°C / 194°F</td><td>1 tsp (2.5 g)</td><td>3–4 min</td><td><a href="sashima-izumi-oolong.html">Sashima Izumi</a></td></tr>
+                    <tr data-type="herbal"><td>Herbal</td><td>100°C / 212°F</td><td>1 bag or 1½ tsp</td><td>5 min</td><td><a href="camomile-bee-pollen.html">Camomile &amp; Bee Pollen</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>Aldridge &amp; Finch</h2>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="tea.html">All Tea</a></li>
+                    <li><a href="tea.html?cat=black">Black</a></li>
+                    <li><a href="tea.html?cat=green">Green</a></li>
+                    <li><a href="tea.html?cat=herbal">Herbal</a></li>
+                    <li><a href="tea.html">Gift Sets</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="brewing.html">Brewing Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form" novalidate>
+                    <input type="email" placeholder="Email address" required>
+                    <button type="submit">Subscribe</button>
+                    <p class="newsletter-msg"></p>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

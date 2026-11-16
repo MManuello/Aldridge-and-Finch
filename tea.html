@@ -3,113 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aldridge & Finch - Shop All Teas</title>
+    <title>Aldridge &amp; Finch - Shop All Teas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-
-
-
-
     <header>
         <nav class="nav-left">
             <a href="index.html">Home</a>
             <a href="tea.html" class="active">Shop</a>
+            <a href="brewing.html">Brewing</a>
             <a href="#">About</a>
         </nav>
         <div class="logo">
-            <h1>Aldridge & Finch</h1>
+            <h1><a href="index.html">Aldridge &amp; Finch</a></h1>
         </div>
         <div class="nav-right">
-            <a href="#">Search</a>
-            <a href="#">Cart ( 0)</a>
+            <a href="tea.html#search" class="search-link">Search</a>
+            <a href="#" class="cart-link">Cart (0)</a>
         </div>
     </header>
     <div class="shop-container">
-        <div class="breadcrumb">Home / Shop</div>
+        <div class="breadcrumb"><a href="index.html">Home</a> / Shop</div>
         <h2>All Teas</h2>
 
         <div class="shop-layout">
             <aside class="filters">
                 <div class="filter-group">
+                    <h4>Search</h4>
+                    <input type="search" id="search" class="shop-search" placeholder="Search teas">
+                </div>
+                <div class="filter-group">
                     <h4>Categories</h4>
-                    <label><input type="checkbox"> Black</label>
-                    <label><input type="checkbox"> Green</label>
-                    <label><input type="checkbox"> Herbal</label>
-                    <label><input type="checkbox"> White</label>
-                    <label><input type="checkbox"> Oolong</label>
+                    <label><input type="checkbox" data-filter="category" value="black"> Black</label>
+                    <label><input type="checkbox" data-filter="category" value="green"> Green</label>
+                    <label><input type="checkbox" data-filter="category" value="herbal"> Herbal</label>
+                    <label><input type="checkbox" data-filter="category" value="white"> White</label>
+                    <label><input type="checkbox" data-filter="category" value="oolong"> Oolong</label>
                 </div>
                 <div class="filter-group">
                     <h4>Format</h4>
-                    <label><input type="checkbox"> Loose leaf</label>
-                    <label><input type="checkbox"> Tea bags</label>
+                    <label><input type="checkbox" data-filter="format" value="loose"> Loose leaf</label>
+                    <label><input type="checkbox" data-filter="format" value="bags"> Tea bags</label>
                 </div>
+                <button type="button" class="clear-filters">Clear</button>
             </aside>
-            <div class="catalog-grid">
-                <div class="product-card">
-                    <img class="product-img-placeholder" src="images/2002657_ayr25_royal_blend_loose_tea_250g_tin_mob_sq_b.jpg.webp" alt="Royal Blend loose leaf tea tin">
-                    <div class="product-info">
-                        <span class="product-name">Product name</span>
-                        <span class="product-price">$18</span>
+            <div class="catalog">
+                <p class="result-count"></p>
+                <div class="catalog-grid">
+                    <div class="product-card" data-category="black" data-format="loose">
+                        <a href="royal-blend.html"><img class="product-img-placeholder" src="images/2002657_ayr25_royal_blend_loose_tea_250g_tin_mob_sq_b.jpg.webp" alt="Royal Blend loose leaf tea tin"></a>
+                        <div class="product-info">
+                            <a href="royal-blend.html" class="product-name">Royal Blend Loose Leaf Tea</a>
+                            <span class="product-price">$27.00</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Royal Blend Loose Leaf Tea" data-price="27.00">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img class="product-img-placeholder" src="images/5086379_green_tea_elderflower_loose_leaf_mob_sq_a_1.jpg.webp" alt="Green tea with elderflower, loose leaf">
-                    <div class="product-info">
-                        <span class="product-name">Product name</span>
-                        <span class="product-price">$16</span>
+                    <div class="product-card" data-category="green" data-format="loose">
+                        <a href="elderflower.html"><img class="product-img-placeholder" src="images/5086379_green_tea_elderflower_loose_leaf_mob_sq_a_1.jpg.webp" alt="Green tea with elderflower, loose leaf"></a>
+                        <div class="product-info">
+                            <a href="elderflower.html" class="product-name">Green Tea with Elderflower</a>
+                            <span class="product-price">$16.00</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Green Tea with Elderflower" data-price="16.00">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img class="product-img-placeholder" src="images/091939ef-f616-4027-a6df-359f8094d3dc.jpg.webp" alt="Sashima Izumi oolong tea pouch">
-                    <div class="product-info">
-                        <span class="product-name">Product name</span>
-                        <span class="product-price">$15</span>
+                    <div class="product-card" data-category="green" data-format="loose">
+                        <a href="sencha-tea-box.html"><img class="product-img-placeholder" src="images/SenchaTeaBox.jpg.webp" alt="Sencha tea box"></a>
+                        <div class="product-info">
+                            <a href="sencha-tea-box.html" class="product-name">Sencha Tea Box</a>
+                            <span class="product-price">$17.00</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Sencha Tea Box" data-price="17.00">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img class="product-img-placeholder" src="images/SenchaTeaBox.jpg.webp" alt="Sencha tea box">
-                    <div class="product-info">
-                        <span class="product-name">Product name</span>
-                        <span class="product-price">$17</span>
+                    <div class="product-card" data-category="green" data-format="bags">
+                        <a href="sencha-tea-bags.html"><img class="product-img-placeholder" src="images/SenchaTeaBag.webp" alt="Sencha tea bags"></a>
+                        <div class="product-info">
+                            <a href="sencha-tea-bags.html" class="product-name">Sencha Tea Bags</a>
+                            <span class="product-price">$14.00</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Sencha Tea Bags" data-price="14.00">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img class="product-img-placeholder" src="images/2184207_mob_sq.jpg.webp" alt="Jasmine silver needle white tea tin">
-                    <div class="product-info">
-                        <span class="product-name">Product name</span>
-                        <span class="product-price">$24</span>
+                    <div class="product-card" data-category="white" data-format="loose">
+                        <a href="jasmine-silver-needle.html"><img class="product-img-placeholder" src="images/2184207_mob_sq.jpg.webp" alt="Jasmine silver needle white tea tin"></a>
+                        <div class="product-info">
+                            <a href="jasmine-silver-needle.html" class="product-name">Jasmine Silver Needle White Tea</a>
+                            <span class="product-price">$24.00</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Jasmine Silver Needle White Tea" data-price="24.00">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-card">
-                    <img class="product-img-placeholder" src="images/SenchaTeaBag.webp" alt="Sencha tea bags">
-                    <div class="product-info">
-                        <span class="product-name">Product name</span>
-                        <span class="product-price">$14</span>
+                    <div class="product-card" data-category="oolong" data-format="loose">
+                        <a href="sashima-izumi-oolong.html"><img class="product-img-placeholder" src="images/091939ef-f616-4027-a6df-359f8094d3dc.jpg.webp" alt="Sashima Izumi oolong tea pouch"></a>
+                        <div class="product-info">
+                            <a href="sashima-izumi-oolong.html" class="product-name">Sashima Izumi Oolong</a>
+                            <span class="product-price">$15.00</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Sashima Izumi Oolong" data-price="15.00">Add to Cart</button>
                     </div>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <div class="product-card" data-category="black" data-format="loose">
+                        <a href="earl-grey-classic.html"><img class="product-img-placeholder" src="images/EarlgreyClassic.jpg" alt="Earl Grey Classic, 250g Loose Leaf Caddy"></a>
+                        <div class="product-info">
+                            <a href="earl-grey-classic.html" class="product-name">Earl Grey Classic, 250g Loose Leaf Caddy</a>
+                            <span class="product-price">$27.64</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Earl Grey Classic, 250g Loose Leaf Caddy" data-price="27.64">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-category="black" data-format="loose">
+                        <a href="darjeeling.html"><img class="product-img-placeholder" src="images/Darjeeling.gif" alt="Darjeeling FTGFOP, 125g Loose Leaf Tin"></a>
+                        <div class="product-info">
+                            <a href="darjeeling.html" class="product-name">Darjeeling FTGFOP, 125g Loose Leaf Tin</a>
+                            <span class="product-price">$23.02</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Darjeeling FTGFOP, 125g Loose Leaf Tin" data-price="23.02">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-category="black" data-format="loose">
+                        <a href="lapsang-souchong.html"><img class="product-img-placeholder" src="images/lapsang-souchong.jpg" alt="Lapsang Souchong, 125g Loose Leaf Tin"></a>
+                        <div class="product-info">
+                            <a href="lapsang-souchong.html" class="product-name">Lapsang Souchong, 125g Loose Leaf Tin</a>
+                            <span class="product-price">$16.86</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Lapsang Souchong, 125g Loose Leaf Tin" data-price="16.86">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-category="black" data-format="loose">
+                        <a href="assam.html"><img class="product-img-placeholder" src="images/Assam.jpg.webp" alt="Assam TGFOP, 125g Loose Leaf Tin"></a>
+                        <div class="product-info">
+                            <a href="assam.html" class="product-name">Assam TGFOP, 125g Loose Leaf Tin</a>
+                            <span class="product-price">$16.86</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Assam TGFOP, 125g Loose Leaf Tin" data-price="16.86">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-category="oolong" data-format="loose">
+                        <a href="rose-pouchong.html"><img class="product-img-placeholder" src="images/rose-pouchong.jpg" alt="Rose Pouchong, 125g Loose Leaf Tin"></a>
+                        <div class="product-info">
+                            <a href="rose-pouchong.html" class="product-name">Rose Pouchong, 125g Loose Leaf Tin</a>
+                            <span class="product-price">$29.18</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Rose Pouchong, 125g Loose Leaf Tin" data-price="29.18">Add to Cart</button>
+                    </div>
+                    <div class="product-card" data-category="herbal" data-format="bags">
+                        <a href="camomile-bee-pollen.html"><img class="product-img-placeholder" src="images/Beepollen.jpg.webp" alt="Camomile &amp; Bee Pollen Infusion, 30 Silky Bags"></a>
+                        <div class="product-info">
+                            <a href="camomile-bee-pollen.html" class="product-name">Camomile &amp; Bee Pollen Infusion, 30 Silky Bags</a>
+                            <span class="product-price">$30.72</span>
+                        </div>
+                        <button class="add-to-cart" data-name="Camomile &amp; Bee Pollen Infusion, 30 Silky Bags" data-price="30.72">Add to Cart</button>
+                    </div>
                 </div>
+                <p class="no-results" hidden>No teas match your filters.</p>
             </div>
         </div>
     </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <h2>Aldridge & Finch</h2>
+                <h2>Aldridge &amp; Finch</h2>
             </div>
             <div class="footer-links">
                 <h4>Shop</h4>
                 <ul>
                     <li><a href="tea.html">All Tea</a></li>
-                    <li><a href="#">Black</a></li>
-                    <li><a href="#">Green</a></li>
-                    <li><a href="#">Herbal</a></li>
-                    <li><a href="#">Gift Sets</a></li>
+                    <li><a href="tea.html?cat=black">Black</a></li>
+                    <li><a href="tea.html?cat=green">Green</a></li>
+                    <li><a href="tea.html?cat=herbal">Herbal</a></li>
+                    <li><a href="tea.html">Gift Sets</a></li>
                 </ul>
             </div>
             <div class="footer-links">
@@ -118,14 +177,15 @@
                     <li><a href="#">Shipping</a></li>
                     <li><a href="#">Returns</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Brewing Guide</a></li>
+                    <li><a href="brewing.html">Brewing Guide</a></li>
                 </ul>
             </div>
             <div class="footer-newsletter">
                 <h4>Newsletter</h4>
-                <form>
-                    <input type="email" placeholder="Email address">
+                <form class="newsletter-form" novalidate>
+                    <input type="email" placeholder="Email address" required>
                     <button type="submit">Subscribe</button>
+                    <p class="newsletter-msg"></p>
                 </form>
             </div>
         </div>

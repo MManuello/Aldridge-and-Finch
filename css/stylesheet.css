@@ -1,15 +1,35 @@
 
+:root {
+    --cream: #f7f3ec;
+    --parchment: #f0e6d6;
+    --sand: #e2d3be;
+    --forest: #274c34;
+    --forest-dark: #1b3022;
+    --ink: #2b3e30;
+    --muted: #666;
+    --gold: #b08d57;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: serif;
 }
 
 body {
-    background-color: #f7f3ec; 
-    color: #2b3e30;
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
 }
+
+h1, h2, h3, .logo h1, .product-name {
+    font-family: var(--serif);
+}
+
+button, input, select { font-family: inherit; }
 header {
     display: flex;
     justify-content: space-between;
@@ -310,7 +330,7 @@ footer {
     width: 240px;
 }
 
-/* Product detail pages */
+
 .product-page {
     padding: 40px;
 }
@@ -389,4 +409,87 @@ footer {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+.logo h1 a { color: inherit; text-decoration: none; }
+.product-info a.product-name { color: inherit; text-decoration: none; }
+.product-info a.product-name:hover { text-decoration: underline; }
+.product-info { gap: 10px; }
+.product-card[hidden] { display: none; }
+.back-link { margin-top: 20px; font-size: 13px; }
+.back-link a { color: #2b3e30; }
+
+.catalog { flex-grow: 1; }
+.catalog .catalog-grid { width: 100%; }
+.result-count { font-size: 13px; color: #666; margin-bottom: 15px; }
+.no-results { padding: 40px 0; color: #666; }
+.shop-search {
+    width: 100%; padding: 8px 10px; border: 1px solid #e2d3be;
+    background: #fff; font-size: 14px; color: #2b3e30;
+}
+.clear-filters {
+    background: none; border: none; border-bottom: 1px solid #2b3e30;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+    color: #2b3e30; cursor: pointer; padding: 0;
+}
+
+.newsletter-msg { font-size: 13px; color: #b0c2b6; min-height: 1em; }
+
+/* brewing page */
+.brew-page { padding: 40px; }
+.brew-page > h2 { font-size: 40px; font-weight: normal; margin-bottom: 10px; }
+.brew-intro { max-width: 600px; line-height: 1.6; color: var(--muted); margin-bottom: 30px; }
+
+.brew-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.brew-form, .brew-result {
+    background: var(--parchment);
+    border: 1px solid var(--sand);
+    padding: 30px;
+}
+.brew-form h3, .brew-result h3 { font-size: 26px; font-weight: normal; margin-bottom: 20px; }
+.brew-form label { display: block; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin: 15px 0 6px; }
+.brew-form label.inline { display: inline-block; text-transform: none; letter-spacing: 0; font-size: 15px; margin: 0 15px 0 0; }
+.brew-form select, .brew-form input[type="number"], .brew-form input[type="text"] {
+    width: 100%; padding: 10px; border: 1px solid var(--sand); background: #fff; font-size: 15px; color: var(--ink);
+}
+.brew-form fieldset { border: none; margin-top: 15px; }
+.brew-form legend { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.brew-form .btn { margin-top: 25px; border: none; cursor: pointer; }
+.form-error { color: #9b3b2f; font-size: 14px; margin-top: 12px; min-height: 1em; }
+
+.brew-placeholder { color: var(--muted); font-style: italic; }
+.recipe { list-style: none; }
+.recipe li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--sand); }
+.recipe span { text-transform: uppercase; font-size: 12px; letter-spacing: 1px; color: var(--muted); }
+.recipe strong { font-weight: 500; }
+.timer { display: flex; align-items: center; justify-content: space-between; margin-top: 25px; }
+.timer-display { font-family: var(--serif); font-size: 44px; }
+.timer .btn { border: none; cursor: pointer; }
+
+.table-title { font-size: 28px; font-weight: normal; margin-bottom: 15px; }
+.table-wrap { overflow-x: auto; }
+.brew-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--sand); }
+.brew-table th {
+    background: var(--forest); color: #fff; text-align: left; padding: 14px 16px;
+    font-weight: 400; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+}
+.brew-table td { padding: 14px 16px; border-bottom: 1px solid var(--sand); font-size: 15px; }
+.brew-table tbody tr:nth-child(even) { background: var(--cream); }
+.brew-table tbody tr:hover { background: var(--parchment); }
+.brew-table tr.highlight td { background: #e4ecd9; font-weight: 500; }
+.brew-table td:first-child { font-family: var(--serif); font-size: 18px; }
+.brew-table a { color: var(--forest); }
+
+.map-section { padding: 0 40px 20px; }
+.map-intro { color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+#tea-map { height: 450px; border: 1px solid var(--sand); }
+.leaflet-popup-content { font-family: var(--sans); font-size: 14px; line-height: 1.6; }
+.leaflet-popup-content a { color: var(--forest); }
+@media (max-width: 560px) {
+    .map-section { padding: 0 20px 20px; }
+    #tea-map { height: 320px; }
 }

@@ -467,7 +467,7 @@ footer {
 .recipe span { text-transform: uppercase; font-size: 12px; letter-spacing: 1px; color: var(--muted); }
 .recipe strong { font-weight: 500; }
 .timer { display: flex; align-items: center; justify-content: space-between; margin-top: 25px; }
-.timer-display { font-family: var(--serif); font-size: 44px; }
+#timer-display { font-family: var(--serif); font-size: 44px; }
 .timer .btn { border: none; cursor: pointer; }
 
 .table-title { font-size: 28px; font-weight: normal; margin-bottom: 15px; }
